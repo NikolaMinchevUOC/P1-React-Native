@@ -1,15 +1,24 @@
-import { ActivityIndicator, ScrollView, Text, View } from "react-native";
-
 import { useNavigation } from "@react-navigation/native";
-import { Image } from "@rneui/themed";
+import { Icon } from "@rneui/themed";
 import { useLayoutEffect } from "react";
-
+import { ActivityIndicator, Button, Image, ScrollView, Text, View } from "react-native";
 const Evolucion = () => {
   const navigation = useNavigation();
 
   useLayoutEffect(() => {
     navigation.setOptions({
-      headerShown: false,
+      headerShown: true,
+
+      headerLeft: () => (
+        <View style={{ marginLeft: 20, marginTop: 3 }}>
+          <Icon name="arrowleft" type="antdesign" onPress={() => navigation.navigate("Inicio")} />
+        </View>
+      ),
+      headerRight: () => (
+        <View style={{ marginRight: 20, marginTop: 5 }}>
+          <Icon name="info-with-circle" type="entypo" onPress={() => navigation.navigate("Info")} />
+        </View>
+      ),
     });
   });
 

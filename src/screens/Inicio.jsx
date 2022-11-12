@@ -1,21 +1,17 @@
-import { ActivityIndicator, Image, Text, View } from "react-native";
-
 import { useNavigation } from "@react-navigation/native";
 import { Icon } from "@rneui/themed";
-import { useLayoutEffect } from "react";
+import React, { useLayoutEffect } from "react";
+import { Image, Text, View } from "react-native";
+import imagenDeFondo from "../../assets/background_image.jpg";
+import styles from "../styles/StyleInicio";
 
-const NuevoReto = () => {
+const Inicio = () => {
   const navigation = useNavigation();
 
   useLayoutEffect(() => {
     navigation.setOptions({
       headerShown: true,
 
-      headerLeft: () => (
-        <View style={{ marginLeft: 20, marginTop: 3 }}>
-          <Icon name="arrowleft" type="antdesign" onPress={() => navigation.navigate("Inicio")} />
-        </View>
-      ),
       headerRight: () => (
         <View style={{ marginRight: 20, marginTop: 5 }}>
           <Icon name="info-with-circle" type="entypo" onPress={() => navigation.navigate("Info")} />
@@ -23,17 +19,12 @@ const NuevoReto = () => {
       ),
     });
   });
-
   return (
-    <View style={{ backgroundColor: "#998830" }}>
-      <Image
-        source={require("../../assets/new-goal.jpg")}
-        containerStyle={{ width: "100%", height: 220 }}
-        PlaceholderContent={<ActivityIndicator />}
-      />
+    <View style={styles.container}>
+      <Image source={imagenDeFondo} style={styles.ImageBackground}></Image>
       <Text
         style={{
-          height: 590,
+          height: 390,
           color: "black",
           fontSize: 32,
           lineHeight: 84,
@@ -43,9 +34,10 @@ const NuevoReto = () => {
           backgroundColor: "white",
         }}
       >
-        Nuevo Reto
+        Inicio
       </Text>
     </View>
   );
 };
-export default NuevoReto;
+
+export default Inicio;

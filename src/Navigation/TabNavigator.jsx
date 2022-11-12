@@ -4,11 +4,12 @@ import { useLayoutEffect } from "react";
 import { Text, View } from "react-native";
 import Contactar from "../screens/Contactar";
 import Evolucion from "../screens/Evolucion";
+import Info from "../screens/Info";
+import Inicio from "../screens/Inicio";
 import NuevoReto from "../screens/NuevoReto";
 import Perfil from "../screens/Perfil";
 import RetosActivos from "../screens/RetosActivos";
 import RetosCompletados from "../screens/RetosCompletados";
-
 // import Icons
 import { Icon } from "@rneui/themed";
 
@@ -26,6 +27,7 @@ const TabNavigator = () => {
   // Icons and colors from navigation tab
   return (
     <Tab.Navigator
+      initialRouteName="Inicio"
       screenOptions={({ route }) => ({
         tabActiveTintColor: "green",
         // tabBarLabelStyle: {
@@ -44,6 +46,8 @@ const TabNavigator = () => {
             return <Icon name="flag" type="entypo" color={focused ? "blue" : "gray"} size={focused ? 25 : 20} />;
           } else if (route.name === "Completados") {
             return <Icon name="box" type="entypo" color={focused ? "blue" : "gray"} size={focused ? 25 : 20} />;
+          } else if (route.name === "Inicio") {
+            return <Icon name="box" type="entypo" color={focused ? "blue" : "gray"} size={focused ? 25 : 20} />;
           }
         },
       })}
@@ -54,6 +58,22 @@ const TabNavigator = () => {
       <Tab.Screen name="Contactar" component={Contactar} />
       <Tab.Screen name="Activos" component={RetosActivos} />
       <Tab.Screen name="Completados" component={RetosCompletados} />
+      <Tab.Screen
+        name="Inicio"
+        component={Inicio}
+        options={{
+          tabBarButton: () => null,
+          tabBarVisible: false, // if you don't want to see the tab bar
+        }}
+      />
+      <Tab.Screen
+        name="Info"
+        component={Info}
+        options={{
+          tabBarButton: () => null,
+          tabBarVisible: false, // if you don't want to see the tab bar
+        }}
+      />
     </Tab.Navigator>
   );
 };
