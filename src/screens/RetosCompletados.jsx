@@ -9,10 +9,10 @@ const RetosCompletados = () => {
   useLayoutEffect(() => {
     navigation.setOptions({
       headerShown: true,
-
+      headerTitleAlign: "center",
       headerLeft: () => (
-        <View style={{ marginLeft: 20, marginTop: 3 }}>
-          <Icon name="arrowleft" type="antdesign" onPress={() => navigation.navigate("Inicio")} />
+        <View style={{ marginLeft: 20 }}>
+          <Icon name="home" type="materialcommunityicons" onPress={() => navigation.navigate("Inicio")} />
         </View>
       ),
       headerRight: () => (

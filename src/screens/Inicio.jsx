@@ -11,7 +11,7 @@ const Inicio = () => {
   useLayoutEffect(() => {
     navigation.setOptions({
       headerShown: true,
-
+      headerTitleAlign: "center",
       headerRight: () => (
         <View style={{ marginRight: 20, marginTop: 5 }}>
           <Icon name="info-with-circle" type="entypo" onPress={() => navigation.navigate("Info")} />
