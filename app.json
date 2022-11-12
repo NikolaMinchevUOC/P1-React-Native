@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "RN-UOC-P1",
-    "slug": "RN-UOC-P1",
+    "name": "FP214_P1",
+    "slug": "FP214_P1",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
@@ -24,8 +24,7 @@
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#FFFFFF"
-      },
-      "package": "com.nminchev.RNUOCP1"
+      }
     },
     "web": {
       "favicon": "./assets/favicon.png"

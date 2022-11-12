@@ -1,9 +1,6 @@
-import MainScreen from "./components/MainScreen";
+import React from "react";
+import Inicio from "./src/components/Inicio";
 
 export default function App() {
-  return (
-    <>
-      <MainScreen />
-    </>
-  );
+  return <Inicio />;
 }
