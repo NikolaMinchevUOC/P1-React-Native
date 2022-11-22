@@ -1,7 +1,7 @@
 import { useNavigation } from "@react-navigation/native";
 import { Icon } from "@rneui/themed";
 import React, { useLayoutEffect } from "react";
-import { Image, Text, View } from "react-native";
+import { Button, Image, Text, View } from "react-native";
 import imagenDeFondo from "../../assets/background_image.jpg";
 import styles from "../styles/StyleInicio";
 
@@ -24,7 +24,6 @@ const Inicio = () => {
       <Image source={imagenDeFondo} style={styles.ImageBackground}></Image>
       <Text
         style={{
-          height: 390,
           color: "black",
           fontSize: 32,
           lineHeight: 84,
@@ -36,6 +35,12 @@ const Inicio = () => {
       >
         Inicio
       </Text>
+      <Button title="Evolucion" onPress={() => navigation.navigate("Evolucion")} />
+      <Button title="Nuevo Reto" onPress={() => navigation.navigate("NuevoReto")} />
+      <Button title="Perfil" onPress={() => navigation.navigate("Perfil")} />
+      <Button title="Contactar" onPress={() => navigation.navigate("Contactar")} />
+      <Button title="Retos Activos" onPress={() => navigation.navigate("Activos")} />
+      <Button title="Retos Completados" onPress={() => navigation.navigate("Completados")} />
     </View>
   );
 };

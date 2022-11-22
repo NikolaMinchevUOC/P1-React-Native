@@ -11,11 +11,18 @@ const Contactar = () => {
       headerTitleAlign: "center",
       headerLeft: () => (
         <View style={{ marginLeft: 20 }}>
-          <Icon name="home" type="materialcommunityicons" onPress={() => navigation.navigate("Inicio")} />
+          <Icon name="chevron-left" type="entypo" onPress={() => navigation.goBack()} />
         </View>
       ),
+
       headerRight: () => (
-        <View style={{ marginRight: 20, marginTop: 5 }}>
+        <View style={{ display: "flex", flexDirection: "row", marginRight: 10, marginTop: 5 }}>
+          <Icon
+            style={{ marginRight: 20 }}
+            name="home"
+            type="materialcommunityicons"
+            onPress={() => navigation.navigate("Inicio")}
+          />
           <Icon name="info-with-circle" type="entypo" onPress={() => navigation.navigate("Info")} />
         </View>
       ),

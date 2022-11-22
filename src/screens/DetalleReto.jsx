@@ -1,10 +1,11 @@
-import { ActivityIndicator, Button, Image, Text, View } from "react-native";
-
 import { useNavigation } from "@react-navigation/native";
 import { Icon } from "@rneui/themed";
-import { useLayoutEffect } from "react";
+import React, { useLayoutEffect } from "react";
+import { Button, Image, Text, View } from "react-native";
+import imagenDeFondo from "../../assets/background_image.jpg";
+import styles from "../styles/StyleInicio";
 
-const NuevoReto = () => {
+const DetalleReto = () => {
   const navigation = useNavigation();
 
   useLayoutEffect(() => {
@@ -30,16 +31,12 @@ const NuevoReto = () => {
       ),
     });
   });
-
   return (
-    <View style={{ backgroundColor: "#998830" }}>
-      <Image
-        source={require("../../assets/new-goal.jpg")}
-        containerStyle={{ width: "100%", height: 220 }}
-        PlaceholderContent={<ActivityIndicator />}
-      />
+    <View style={styles.container}>
+      <Image source={imagenDeFondo} style={styles.ImageBackground}></Image>
       <Text
         style={{
+          height: 290,
           color: "black",
           fontSize: 32,
           lineHeight: 84,
@@ -49,10 +46,12 @@ const NuevoReto = () => {
           backgroundColor: "white",
         }}
       >
-        Nuevo Reto
+        DetalleReto
       </Text>
-      <Button title="Guardar" onPress={() => alert("Guardar")} />
+      <Button title="Editar" onPress={() => alert("Editar")} />
+      <Button title="Nuevo Reto" onPress={() => navigation.navigate("NuevoReto")} />
     </View>
   );
 };
-export default NuevoReto;
+
+export default DetalleReto;

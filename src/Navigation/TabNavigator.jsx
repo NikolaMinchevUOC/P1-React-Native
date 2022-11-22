@@ -12,6 +12,7 @@ import RetosActivos from "../screens/RetosActivos";
 import RetosCompletados from "../screens/RetosCompletados";
 // import Icons
 import { Icon } from "@rneui/themed";
+import DetalleReto from "../screens/DetalleReto";
 
 const Tab = createBottomTabNavigator();
 
@@ -58,6 +59,7 @@ const TabNavigator = () => {
       <Tab.Screen name="Contactar" component={Contactar} />
       <Tab.Screen name="Activos" component={RetosActivos} />
       <Tab.Screen name="Completados" component={RetosCompletados} />
+      <Tab.Screen name="DetalleReto" component={DetalleReto} />
       <Tab.Screen
         name="Inicio"
         component={Inicio}

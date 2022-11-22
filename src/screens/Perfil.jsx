@@ -1,7 +1,7 @@
 import { useNavigation } from "@react-navigation/native";
 import { Icon } from "@rneui/themed";
 import { useLayoutEffect } from "react";
-import { ActivityIndicator, Image, Text, View } from "react-native";
+import { ActivityIndicator, Button, Image, Text, View } from "react-native";
 const Perfil = () => {
   const navigation = useNavigation();
 
@@ -11,11 +11,18 @@ const Perfil = () => {
       headerTitleAlign: "center",
       headerLeft: () => (
         <View style={{ marginLeft: 20 }}>
-          <Icon name="home" type="materialcommunityicons" onPress={() => navigation.navigate("Inicio")} />
+          <Icon name="chevron-left" type="entypo" onPress={() => navigation.goBack()} />
         </View>
       ),
+
       headerRight: () => (
-        <View style={{ marginRight: 20, marginTop: 5 }}>
+        <View style={{ display: "flex", flexDirection: "row", marginRight: 10, marginTop: 5 }}>
+          <Icon
+            style={{ marginRight: 20 }}
+            name="home"
+            type="materialcommunityicons"
+            onPress={() => navigation.navigate("Inicio")}
+          />
           <Icon name="info-with-circle" type="entypo" onPress={() => navigation.navigate("Info")} />
         </View>
       ),
@@ -31,7 +38,6 @@ const Perfil = () => {
       />
       <Text
         style={{
-          height: 590,
           color: "black",
           fontSize: 32,
           lineHeight: 84,
