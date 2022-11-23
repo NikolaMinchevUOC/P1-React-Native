@@ -46,7 +46,71 @@ const Info = () => {
       >
         Info
       </Text>
-      <Button title="Guardar" onPress={() => alert("Guardar")} />
+      <Text
+        style={{
+          color: "black",
+          fontSize: 18,
+          lineHeight: 84,
+          margin: 5,
+          fontWeight: "bold",
+          textAlign: "center",
+          backgroundColor: "white",
+        }}
+      >
+        Aplicacion creada por el grupo Reactivados
+      </Text>
+      <Text
+        style={{
+          color: "black",
+          fontSize: 28,
+          lineHeight: 84,
+          margin: 5,
+          fontWeight: "bold",
+          textAlign: "center",
+          backgroundColor: "white",
+        }}
+      >
+        Integrantes
+      </Text>
+      <Text
+        style={{
+          color: "black",
+          fontSize: 18,
+          lineHeight: 84,
+          margin: 5,
+          fontWeight: "bold",
+          textAlign: "center",
+          backgroundColor: "white",
+        }}
+      >
+        Iago Posse Solá
+      </Text>
+      <Text
+        style={{
+          color: "black",
+          fontSize: 18,
+          lineHeight: 84,
+          margin: 5,
+          fontWeight: "bold",
+          textAlign: "center",
+          backgroundColor: "white",
+        }}
+      >
+        Gerard Siles Aligue
+      </Text>
+      <Text
+        style={{
+          color: "black",
+          fontSize: 18,
+          lineHeight: 84,
+          margin: 5,
+          fontWeight: "bold",
+          textAlign: "center",
+          backgroundColor: "white",
+        }}
+      >
+        Nikola Minchev Penev
+      </Text>
     </View>
   );
 };
