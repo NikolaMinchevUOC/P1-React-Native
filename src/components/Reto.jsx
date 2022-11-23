@@ -4,7 +4,7 @@ import { Image } from "@rneui/themed";
 import { Text, TouchableOpacity, TouchableWithoutFeedback, View } from "react-native";
 import { useTailwind } from "tailwind-rn";
 
-function Reto({ nombre, detalle, completado, categoria, tiempo, activo, prioridad }) {
+function Reto({ nombre, detalle, completado, categoria, tiempo, activo, periodicidad }) {
   const tw = useTailwind();
   const navigation = useNavigation();
 
@@ -19,7 +19,7 @@ function Reto({ nombre, detalle, completado, categoria, tiempo, activo, priorida
           categoria: categoria,
           tiempo: tiempo,
           activo: activo,
-          prioridad: prioridad,
+          periodicidad: periodicidad,
         })
       }
     >

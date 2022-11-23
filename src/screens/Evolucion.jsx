@@ -74,7 +74,7 @@ const Evolucion = () => {
         categoria={item.categoria}
         tiempo={item.tiempo}
         activo={item.activo}
-        prioridad={item.prioridad}
+        periodicidad={item.periodicidad}
       />
     );
   };

@@ -2,11 +2,13 @@ import { useNavigation } from "@react-navigation/native";
 import { Icon } from "@rneui/themed";
 import React, { useLayoutEffect } from "react";
 import { Button, Image, Text, View } from "react-native";
+import { useTailwind } from "tailwind-rn";
 import imagenDeFondo from "../../assets/background_image.jpg";
 import styles from "../styles/StyleInicio";
 
-const DetalleReto = () => {
+const DetalleReto = ({ route }) => {
   const navigation = useNavigation();
+  const tw = useTailwind();
 
   useLayoutEffect(() => {
     navigation.setOptions({
@@ -36,10 +38,8 @@ const DetalleReto = () => {
       <Image source={imagenDeFondo} style={styles.ImageBackground}></Image>
       <Text
         style={{
-          height: 290,
           color: "black",
           fontSize: 32,
-          lineHeight: 84,
           margin: 5,
           fontWeight: "bold",
           textAlign: "center",
@@ -48,6 +48,80 @@ const DetalleReto = () => {
       >
         DetalleReto
       </Text>
+      <View
+        style={{
+          flexDirection: "column",
+          flex: 1,
+          borderBottomColor: "black",
+          borderWidth: 1,
+          margin: 5,
+          padding: 5,
+        }}
+      >
+        <Text
+          style={{
+            fontWeight: "bold",
+            lineHeight: 24,
+          }}
+        >
+          Nombre
+        </Text>
+        <Text> {route.params.nombre}</Text>
+        <Text
+          style={{
+            fontWeight: "bold",
+            lineHeight: 24,
+          }}
+        >
+          Descripcion
+        </Text>
+        <Text> {route.params.detalle}</Text>
+        <Text
+          style={{
+            fontWeight: "bold",
+            lineHeight: 24,
+          }}
+        >
+          Categoria
+        </Text>
+        <Text> {route.params.categoria}</Text>
+        <Text
+          style={{
+            fontWeight: "bold",
+            lineHeight: 24,
+          }}
+        >
+          Tiempo
+        </Text>
+        <Text> {route.params.tiempo}</Text>
+        <Text
+          style={{
+            fontWeight: "bold",
+            lineHeight: 24,
+          }}
+        >
+          Activo
+        </Text>
+        <Text> {route.params.activo ? "Activo" : "Inactivo"}</Text>
+        <Text
+          style={{
+            fontWeight: "bold",
+            lineHeight: 24,
+          }}
+        >
+          Periodicidad
+        </Text>
+        <Text> {route.params.periodicidad}</Text>
+        <Text
+          style={{
+            fontWeight: "bold",
+            lineHeight: 24,
+          }}
+        >
+          Completado
+        </Text>
+        <Text> {route.params.completado}</Text>
+      </View>
       <Button title="Editar" onPress={() => alert("Editar")} />
       <Button title="Nuevo Reto" onPress={() => navigation.navigate("NuevoReto")} />
     </View>
