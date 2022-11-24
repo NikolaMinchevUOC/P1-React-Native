@@ -1,7 +1,7 @@
 import { useNavigation } from "@react-navigation/native";
 import { Icon } from "@rneui/themed";
 import React, { useLayoutEffect } from "react";
-import { Button, Image, Text, View } from "react-native";
+import { Button, Image, Pressable, Text, View } from "react-native";
 import imagenDeFondo from "../../assets/background_image.jpg";
 import styles from "../styles/StyleInicio";
 
@@ -20,7 +20,7 @@ const Inicio = () => {
     });
   });
   return (
-    <View style={styles.container}>
+    <View style={{ backgroundColor: "white", flexDirection: "column" }}>
       <Image source={imagenDeFondo} style={styles.ImageBackground}></Image>
       <Text
         style={{
@@ -35,12 +35,26 @@ const Inicio = () => {
       >
         Inicio
       </Text>
-      <Button title="Evolucion" onPress={() => navigation.navigate("Evolucion")} />
-      <Button title="Nuevo Reto" onPress={() => navigation.navigate("NuevoReto")} />
-      <Button title="Perfil" onPress={() => navigation.navigate("Perfil")} />
-      <Button title="Contactar" onPress={() => navigation.navigate("Contactar")} />
-      <Button title="Retos Activos" onPress={() => navigation.navigate("Activos")} />
-      <Button title="Retos Completados" onPress={() => navigation.navigate("Completados")} />
+      <View style={{ justifyContent: "flex-end" }}>
+        <Pressable style={styles.button} onPress={() => navigation.navigate("Evolucion")}>
+          <Text style={styles.text}>Evolucion</Text>
+        </Pressable>
+        <Pressable style={styles.button} onPress={() => navigation.navigate("NuevoReto")}>
+          <Text style={styles.text}>Nuevo Reto</Text>
+        </Pressable>
+        <Pressable style={styles.button} onPress={() => navigation.navigate("Perfil")}>
+          <Text style={styles.text}>Perfil</Text>
+        </Pressable>
+        <Pressable style={styles.button} onPress={() => navigation.navigate("Contactar")}>
+          <Text style={styles.text}>Contactar</Text>
+        </Pressable>
+        <Pressable style={styles.button} onPress={() => navigation.navigate("Activos")}>
+          <Text style={styles.text}>Retos Activos</Text>
+        </Pressable>
+        <Pressable style={styles.button} onPress={() => navigation.navigate("Completados")}>
+          <Text style={styles.text}>Retos Completados</Text>
+        </Pressable>
+      </View>
     </View>
   );
 };

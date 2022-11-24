@@ -2,23 +2,22 @@ import { useNavigation } from "@react-navigation/native";
 import { Icon } from "@rneui/themed";
 import { collection, onSnapshot } from "firebase/firestore";
 import { useEffect, useLayoutEffect, useState } from "react";
-import { ActivityIndicator, Button, FlatList, Image, ScrollView, Text, TouchableOpacity, View } from "react-native";
+import {
+  ActivityIndicator,
+  Button,
+  FlatList,
+  Image,
+  Pressable,
+  ScrollView,
+  StyleSheet,
+  Text,
+  TouchableOpacity,
+  View,
+} from "react-native";
 import Reto from "../components/Reto";
 import { db } from "../db/firebaseConfig";
-const buttonStyle = {
-  bottom: 0,
-  color: "white",
-  fontSize: 42,
-  lineHeight: 84,
-  margin: 5,
-  fontWeight: "bold",
-  textAlign: "center",
-  backgroundColor: "#000000c0",
-  position: "absolute",
-  bottom: 50,
-  right: 8,
-  borderRadius: 50,
-};
+import styles from "../styles/StyleInicio";
+
 const Evolucion = () => {
   const navigation = useNavigation();
 
@@ -61,6 +60,8 @@ const Evolucion = () => {
     });
   });
 
+  const stylesBtn = StyleSheet.create({});
+
   // Renderizar los retos en el FlatList
   const renderItem = ({ item }) => {
     // const backgroundColor = item.id === selectedId ? '#6e3b6e' : '#f9c2ff';
@@ -80,10 +81,10 @@ const Evolucion = () => {
   };
 
   return (
-    <View style={{ backgroundColor: "white" }}>
+    <View style={{ backgroundColor: "white", flexDirection: "column", flex: 1 }}>
       <Image
         source={require("../../assets/evolucion.jpg")}
-        containerStyle={{ width: "100%", aspectRatio: 3 / 2 }}
+        containerStyle={{ width: "100%" }}
         PlaceholderContent={<ActivityIndicator />}
       />
 
@@ -91,7 +92,6 @@ const Evolucion = () => {
         style={{
           color: "black",
           fontSize: 32,
-          lineHeight: 84,
           margin: 5,
           fontWeight: "bold",
           textAlign: "center",
@@ -101,11 +101,15 @@ const Evolucion = () => {
         Evolucion
       </Text>
       <FlatList data={goals} renderItem={renderItem} keyExtractor={(item) => item.id} extraData={selectedId} />
+      <View style={{ justifyContent: "flex-end" }}>
+        <Pressable style={styles.button} onPress={() => alert("Filter 1")}>
+          <Text style={styles.text}>Filter 1</Text>
+        </Pressable>
 
-      <Button title="Filter 1" onPress={() => alert("Filter 1")} />
-      <Button title="Filter 2" onPress={() => alert("Filter 2")} />
-      <Button title="Filter 3" onPress={() => alert("Filter 3")} />
-      <Button title="Nuevo Reto" onPress={() => navigation.navigate("NuevoReto")} />
+        <Pressable style={styles.button} onPress={() => navigation.navigate("NuevoReto")}>
+          <Text style={styles.text}>Nuevo Reto</Text>
+        </Pressable>
+      </View>
     </View>
   );
 };

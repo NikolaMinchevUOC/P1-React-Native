@@ -1,9 +1,9 @@
-import { ActivityIndicator, Button, Image, Text, View } from "react-native";
+import { ActivityIndicator, Button, Image, Pressable, Text, View } from "react-native";
 
 import { useNavigation } from "@react-navigation/native";
 import { Icon } from "@rneui/themed";
 import { useLayoutEffect } from "react";
-
+import styles from "../styles/StyleInicio";
 const NuevoReto = () => {
   const navigation = useNavigation();
 
@@ -32,7 +32,7 @@ const NuevoReto = () => {
   });
 
   return (
-    <View style={{ backgroundColor: "#998830" }}>
+    <View style={{ backgroundColor: "white", flexDirection: "column", flex: 1 }}>
       <Image
         source={require("../../assets/new-goal.jpg")}
         containerStyle={{ width: "100%", height: 220 }}
@@ -51,7 +51,11 @@ const NuevoReto = () => {
       >
         Nuevo Reto
       </Text>
-      <Button title="Guardar" onPress={() => alert("Guardar")} />
+      <View style={{ flex: 1, justifyContent: "flex-end" }}>
+        <Pressable style={styles.button} onPress={() => alert("Guardar")}>
+          <Text style={styles.text}>Guardar</Text>
+        </Pressable>
+      </View>
     </View>
   );
 };

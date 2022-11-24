@@ -1,7 +1,7 @@
 import { useNavigation } from "@react-navigation/native";
 import { Icon } from "@rneui/themed";
 import React, { useLayoutEffect } from "react";
-import { Button, Image, Text, View } from "react-native";
+import { Button, Image, Pressable, ScrollView, Text, View } from "react-native";
 import { useTailwind } from "tailwind-rn";
 import imagenDeFondo from "../../assets/background_image.jpg";
 import styles from "../styles/StyleInicio";
@@ -34,7 +34,7 @@ const DetalleReto = ({ route }) => {
     });
   });
   return (
-    <View style={styles.container}>
+    <View style={{ backgroundColor: "white", flexDirection: "column", flex: 1 }}>
       <Image source={imagenDeFondo} style={styles.ImageBackground}></Image>
       <Text
         style={{
@@ -48,10 +48,10 @@ const DetalleReto = ({ route }) => {
       >
         DetalleReto
       </Text>
-      <View
+      <ScrollView
         style={{
           flexDirection: "column",
-          flex: 1,
+
           borderBottomColor: "black",
           borderWidth: 1,
           margin: 5,
@@ -121,9 +121,15 @@ const DetalleReto = ({ route }) => {
           Completado
         </Text>
         <Text> {route.params.completado}</Text>
+      </ScrollView>
+      <View style={{ justifyContent: "flex-end" }}>
+        <Pressable style={styles.button} onPress={() => alert("Editar")}>
+          <Text style={styles.text}>Editar</Text>
+        </Pressable>
+        <Pressable style={styles.button} onPress={() => navigation.navigate("NuevoReto")}>
+          <Text style={styles.text}>Nuevo Reto</Text>
+        </Pressable>
       </View>
-      <Button title="Editar" onPress={() => alert("Editar")} />
-      <Button title="Nuevo Reto" onPress={() => navigation.navigate("NuevoReto")} />
     </View>
   );
 };

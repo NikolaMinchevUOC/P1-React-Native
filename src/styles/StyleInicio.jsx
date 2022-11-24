@@ -7,9 +7,29 @@ export default StyleSheet.create({
     backgroundColor: "white",
   },
   ImageBackground: {
-    flex: 1,
-    resizeMode: "cover",
+    height: 220,
     width: "100%",
+    alignItems: "stretch",
+  },
+  button: {
     alignItems: "center",
+    justifyContent: "center",
+    paddingVertical: 12,
+    paddingHorizontal: 32,
+    borderRadius: 4,
+    elevation: 3,
+    backgroundColor: "black",
+    margin: 3,
+  },
+  text: {
+    fontSize: 16,
+    lineHeight: 21,
+    fontWeight: "bold",
+    letterSpacing: 0.25,
+    color: "white",
+  },
+  border: {
+    borderBottomColor: "black",
+    borderWidth: 1,
   },
 });

@@ -76,7 +76,7 @@ const Info = () => {
         style={{
           color: "black",
           fontSize: 18,
-          lineHeight: 84,
+          lineHeight: 54,
           margin: 5,
           fontWeight: "bold",
           textAlign: "center",
@@ -89,7 +89,7 @@ const Info = () => {
         style={{
           color: "black",
           fontSize: 18,
-          lineHeight: 84,
+          lineHeight: 54,
           margin: 5,
           fontWeight: "bold",
           textAlign: "center",
@@ -102,7 +102,7 @@ const Info = () => {
         style={{
           color: "black",
           fontSize: 18,
-          lineHeight: 84,
+          lineHeight: 54,
           margin: 5,
           fontWeight: "bold",
           textAlign: "center",
