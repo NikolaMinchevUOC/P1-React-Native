@@ -11,6 +11,9 @@ const NuevoReto = () => {
     navigation.setOptions({
       headerShown: true,
       headerTitleAlign: "center",
+      headerStyle: {
+				backgroundColor: 'lightblue',
+			},
       headerLeft: () => (
         <View style={{ marginLeft: 20 }}>
           <Icon name="chevron-left" type="entypo" onPress={() => navigation.goBack()} />
@@ -32,25 +35,13 @@ const NuevoReto = () => {
   });
 
   return (
-    <View style={{ backgroundColor: "white", flexDirection: "column", flex: 1 }}>
+    <View style={{ backgroundColor: "lightblue", flexDirection: "column", flex: 1 }}>
       <Image
         source={require("../../assets/new-goal.jpg")}
         containerStyle={{ width: "100%", height: 220 }}
         PlaceholderContent={<ActivityIndicator />}
       />
-      <Text
-        style={{
-          color: "black",
-          fontSize: 32,
-          lineHeight: 84,
-          margin: 5,
-          fontWeight: "bold",
-          textAlign: "center",
-          backgroundColor: "white",
-        }}
-      >
-        Nuevo Reto
-      </Text>
+
       <View style={{ flex: 1, justifyContent: "flex-end" }}>
         <Pressable style={styles.button} onPress={() => alert("Guardar")}>
           <Text style={styles.text}>Guardar</Text>

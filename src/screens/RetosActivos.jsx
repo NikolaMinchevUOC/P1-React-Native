@@ -8,8 +8,12 @@ const RetosActivos = () => {
 
   useLayoutEffect(() => {
     navigation.setOptions({
+      title: "Retos Activos",
       headerShown: true,
       headerTitleAlign: "center",
+      headerStyle: {
+				backgroundColor: 'lightblue',
+			},
       headerLeft: () => (
         <View style={{ marginLeft: 20 }}>
           <Icon name="chevron-left" type="entypo" onPress={() => navigation.goBack()} />
@@ -31,27 +35,14 @@ const RetosActivos = () => {
   });
 
   return (
-    <View style={{ backgroundColor: "#e4d0a3" }}>
+    <View style={{ backgroundColor: "lightblue", flexDirection: "column", flex: 1 }}>
       <Image
         source={require("../../assets/activos.jpg")}
         containerStyle={{ width: "100%", height: 220 }}
         PlaceholderContent={<ActivityIndicator />}
       />
 
-      <Text
-        style={{
-          height: 590,
-          color: "black",
-          fontSize: 32,
-          lineHeight: 84,
-          margin: 5,
-          fontWeight: "bold",
-          textAlign: "center",
-          backgroundColor: "white",
-        }}
-      >
-        Retos Activos
-      </Text>
+      
     </View>
   );
 };

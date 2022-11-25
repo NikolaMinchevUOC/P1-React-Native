@@ -60,7 +60,7 @@ function Reto({ nombre, detalle, completado, categoria, tiempo, activo, periodic
           <Text style={{ fontSize: 14 }}>{detalle}</Text>
         </View>
         <View style={{ margin: 5, marginRight: 10, justifyContent: "center", alignItems: "center" }}>
-          <Text>{completado}</Text>
+          <Text style={{  backgroundColor: "red", borderRadius: 7, }}>{completado}</Text>
 
           <AntDesign name="right" size={18} color="black" style={{ textAlign: "right" }} />
         </View>

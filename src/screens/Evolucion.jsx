@@ -40,6 +40,9 @@ const Evolucion = () => {
     navigation.setOptions({
       headerShown: true,
       headerTitleAlign: "center",
+      headerStyle: {
+				backgroundColor: 'lightblue',
+			},
       headerLeft: () => (
         <View style={{ marginLeft: 20 }}>
           <Icon name="chevron-left" type="entypo" onPress={() => navigation.goBack()} />
@@ -88,26 +91,16 @@ const Evolucion = () => {
         PlaceholderContent={<ActivityIndicator />}
       />
 
-      <Text
-        style={{
-          color: "black",
-          fontSize: 32,
-          margin: 5,
-          fontWeight: "bold",
-          textAlign: "center",
-          backgroundColor: "white",
-        }}
-      >
-        Evolucion
-      </Text>
-      <FlatList data={goals} renderItem={renderItem} keyExtractor={(item) => item.id} extraData={selectedId} />
-      <View style={{ justifyContent: "flex-end" }}>
-        <Pressable style={styles.button} onPress={() => alert("Filter 1")}>
-          <Text style={styles.text}>Filter 1</Text>
-        </Pressable>
+
+      <FlatList style= {{backgroundColor: "lightblue"}} data={goals} renderItem={renderItem} keyExtractor={(item) => item.id} extraData={selectedId} />
+      <View style={{backgroundColor: "lightblue", justifyContent: "flex-end" }}>
+  
 
         <Pressable style={styles.button} onPress={() => navigation.navigate("NuevoReto")}>
           <Text style={styles.text}>Nuevo Reto</Text>
+        </Pressable>
+        <Pressable style={styles.button} onPress={() => navigation.navigate("Activos")}>
+          <Text style={styles.text}>Retos Activos</Text>
         </Pressable>
       </View>
     </View>

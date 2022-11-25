@@ -9,6 +9,9 @@ const Contactar = () => {
     navigation.setOptions({
       headerShown: true,
       headerTitleAlign: "center",
+      headerStyle: {
+				backgroundColor: 'lightblue',
+			},
       headerLeft: () => (
         <View style={{ marginLeft: 20 }}>
           <Icon name="chevron-left" type="entypo" onPress={() => navigation.goBack()} />

@@ -14,7 +14,7 @@ export default StyleSheet.create({
   button: {
     alignItems: "center",
     justifyContent: "center",
-    paddingVertical: 12,
+    paddingVertical: 6,
     paddingHorizontal: 32,
     borderRadius: 4,
     elevation: 3,

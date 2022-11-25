@@ -14,6 +14,9 @@ const DetalleReto = ({ route }) => {
     navigation.setOptions({
       headerShown: true,
       headerTitleAlign: "center",
+      headerStyle: {
+				backgroundColor: 'lightblue',
+			},
       headerLeft: () => (
         <View style={{ marginLeft: 20 }}>
           <Icon name="chevron-left" type="entypo" onPress={() => navigation.goBack()} />
@@ -34,93 +37,126 @@ const DetalleReto = ({ route }) => {
     });
   });
   return (
-    <View style={{ backgroundColor: "white", flexDirection: "column", flex: 1 }}>
+    <View style={{ backgroundColor: "lightblue", flexDirection: "column", flex: 1 }}>
       <Image source={imagenDeFondo} style={styles.ImageBackground}></Image>
-      <Text
-        style={{
-          color: "black",
-          fontSize: 32,
-          margin: 5,
-          fontWeight: "bold",
-          textAlign: "center",
-          backgroundColor: "white",
-        }}
-      >
-        DetalleReto
-      </Text>
       <ScrollView
         style={{
-          flexDirection: "column",
 
-          borderBottomColor: "black",
-          borderWidth: 1,
+          backgroundColor: "grey",
+          flexDirection: "column",
+          borderRadius: 10,
+          borderColor: "lightblue",
+          borderWidth: 0,
           margin: 5,
-          padding: 5,
+          padding: 10,
         }}
       >
         <Text
           style={{
             fontWeight: "bold",
             lineHeight: 24,
+            fontSize: 15,
+            padding: 1,
+            color: "white",
           }}
         >
           Nombre
         </Text>
-        <Text> {route.params.nombre}</Text>
+        <Text style={{
+            padding: 1,
+            color: "#95d7e7",
+          }}> {route.params.nombre}</Text>
         <Text
           style={{
             fontWeight: "bold",
             lineHeight: 24,
+            fontSize: 15,
+            padding: 1,
+            color: "white",
           }}
         >
           Descripcion
         </Text>
-        <Text> {route.params.detalle}</Text>
+        <Text style={{
+            padding: 1,
+            color: "#95d7e7",
+          }}> {route.params.detalle}</Text>
         <Text
           style={{
             fontWeight: "bold",
             lineHeight: 24,
+            fontSize: 15,
+            padding: 1,
+            color: "white",
           }}
         >
           Categoria
         </Text>
-        <Text> {route.params.categoria}</Text>
+        <Text style={{
+            padding: 1,
+            color: "#95d7e7",
+          }}> {route.params.categoria}</Text>
         <Text
           style={{
             fontWeight: "bold",
             lineHeight: 24,
+            fontSize: 15,
+            padding: 1,
+            color: "white",
           }}
         >
           Tiempo
         </Text>
-        <Text> {route.params.tiempo}</Text>
+        <Text style={{
+            padding: 1,
+            color: "#95d7e7",
+          }}> {route.params.tiempo}</Text>
         <Text
           style={{
             fontWeight: "bold",
             lineHeight: 24,
+            fontSize: 15,
+            padding: 1,
+            color: "white",
           }}
         >
           Activo
         </Text>
-        <Text> {route.params.activo ? "Activo" : "Inactivo"}</Text>
+        <Text style={{
+            padding: 1,
+            color: "#95d7e7",
+          }}> {route.params.activo ? "Activo" : "Inactivo"}</Text>
         <Text
           style={{
             fontWeight: "bold",
             lineHeight: 24,
+            fontSize: 15,
+            padding: 1,
+            color: "white",
           }}
         >
           Periodicidad
         </Text>
-        <Text> {route.params.periodicidad}</Text>
+        <Text style={{
+            padding: 1,
+            color: "#95d7e7",
+          }}> {route.params.periodicidad}</Text>
         <Text
           style={{
             fontWeight: "bold",
             lineHeight: 24,
+            fontSize: 15,
+            padding: 1,
+            color: "white",
           }}
         >
           Completado
         </Text>
-        <Text> {route.params.completado}</Text>
+        <Text style={{
+            padding: 1,
+            color: "#95d7e7",
+            paddingBottom:10
+          }}> {route.params.completado}</Text>
       </ScrollView>
       <View style={{ justifyContent: "flex-end" }}>
         <Pressable style={styles.button} onPress={() => alert("Editar")}>

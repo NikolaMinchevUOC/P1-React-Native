@@ -1,7 +1,7 @@
 import { useNavigation } from "@react-navigation/native";
 import { Icon } from "@rneui/themed";
 import React, { useLayoutEffect } from "react";
-import { Button, Image, Text, View } from "react-native";
+import { Button, Image, ScrollView, Text, View } from "react-native";
 import imagenDeFondo from "../../assets/background_image.jpg";
 import styles from "../styles/StyleInicio";
 
@@ -12,6 +12,9 @@ const Info = () => {
     navigation.setOptions({
       headerShown: true,
       headerTitleAlign: "center",
+      headerStyle: {
+				backgroundColor: 'lightblue',
+			},
       headerLeft: () => (
         <View style={{ marginLeft: 20 }}>
           <Icon name="chevron-left" type="entypo" onPress={() => navigation.goBack()} />
@@ -33,25 +36,15 @@ const Info = () => {
   return (
     <View style={styles.container}>
       <Image source={imagenDeFondo} style={styles.ImageBackground}></Image>
-      <Text
-        style={{
-          color: "black",
-          fontSize: 32,
-          lineHeight: 84,
-          margin: 5,
-          fontWeight: "bold",
-          textAlign: "center",
-          backgroundColor: "white",
-        }}
-      >
-        Info
-      </Text>
+      
+      <ScrollView>
+ 
       <Text
         style={{
           color: "black",
           fontSize: 18,
-          lineHeight: 84,
-          margin: 5,
+          lineHeight: 20,
+          margin: 1,
           fontWeight: "bold",
           textAlign: "center",
           backgroundColor: "white",
@@ -63,8 +56,8 @@ const Info = () => {
         style={{
           color: "black",
           fontSize: 28,
-          lineHeight: 84,
-          margin: 5,
+          lineHeight: 50,
+          margin: 10,
           fontWeight: "bold",
           textAlign: "center",
           backgroundColor: "white",
@@ -76,7 +69,7 @@ const Info = () => {
         style={{
           color: "black",
           fontSize: 18,
-          lineHeight: 54,
+          lineHeight: 25,
           margin: 5,
           fontWeight: "bold",
           textAlign: "center",
@@ -89,7 +82,7 @@ const Info = () => {
         style={{
           color: "black",
           fontSize: 18,
-          lineHeight: 54,
+          lineHeight: 25,
           margin: 5,
           fontWeight: "bold",
           textAlign: "center",
@@ -102,7 +95,7 @@ const Info = () => {
         style={{
           color: "black",
           fontSize: 18,
-          lineHeight: 54,
+          lineHeight: 25,
           margin: 5,
           fontWeight: "bold",
           textAlign: "center",
@@ -111,6 +104,7 @@ const Info = () => {
       >
         Nikola Minchev Penev
       </Text>
+      </ScrollView>
     </View>
   );
 };

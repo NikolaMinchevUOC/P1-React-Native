@@ -9,6 +9,9 @@ const Perfil = () => {
     navigation.setOptions({
       headerShown: true,
       headerTitleAlign: "center",
+      headerStyle: {
+				backgroundColor: 'lightblue',
+			},
       headerLeft: () => (
         <View style={{ marginLeft: 20 }}>
           <Icon name="chevron-left" type="entypo" onPress={() => navigation.goBack()} />
@@ -30,25 +33,13 @@ const Perfil = () => {
   });
 
   return (
-    <View style={{ backgroundColor: "#e0eab5" }}>
+    <View style={{ backgroundColor: "lightblue", flexDirection: "column", flex: 1 }}>
       <Image
         source={require("../../assets/perfil.jpg")}
         containerStyle={{ width: "100%", height: 220 }}
         PlaceholderContent={<ActivityIndicator />}
       />
-      <Text
-        style={{
-          color: "black",
-          fontSize: 32,
-          lineHeight: 84,
-          margin: 5,
-          fontWeight: "bold",
-          textAlign: "center",
-          backgroundColor: "white",
-        }}
-      >
-        Perfil
-      </Text>
+      
     </View>
   );
 };

@@ -1,7 +1,7 @@
 import { useNavigation } from "@react-navigation/native";
 import { Icon } from "@rneui/themed";
 import React, { useLayoutEffect } from "react";
-import { Button, Image, Pressable, Text, View } from "react-native";
+import { Button, Image, Pressable, ScrollView, Text, View } from "react-native";
 import imagenDeFondo from "../../assets/background_image.jpg";
 import styles from "../styles/StyleInicio";
 
@@ -12,6 +12,9 @@ const Inicio = () => {
     navigation.setOptions({
       headerShown: true,
       headerTitleAlign: "center",
+      headerStyle: {
+				backgroundColor: 'lightblue',
+			},
       headerRight: () => (
         <View style={{ marginRight: 20, marginTop: 5 }}>
           <Icon name="info-with-circle" type="entypo" onPress={() => navigation.navigate("Info")} />
@@ -20,21 +23,10 @@ const Inicio = () => {
     });
   });
   return (
-    <View style={{ backgroundColor: "white", flexDirection: "column" }}>
+    <ScrollView style={{ backgroundColor: "lightblue", flexDirection: "column", flex: 1 }}>
+    <View style={{  flexDirection: "column" }}>
       <Image source={imagenDeFondo} style={styles.ImageBackground}></Image>
-      <Text
-        style={{
-          color: "black",
-          fontSize: 32,
-          lineHeight: 84,
-          margin: 5,
-          fontWeight: "bold",
-          textAlign: "center",
-          backgroundColor: "white",
-        }}
-      >
-        Inicio
-      </Text>
+      
       <View style={{ justifyContent: "flex-end" }}>
         <Pressable style={styles.button} onPress={() => navigation.navigate("Evolucion")}>
           <Text style={styles.text}>Evolucion</Text>
@@ -56,6 +48,7 @@ const Inicio = () => {
         </Pressable>
       </View>
     </View>
+    </ScrollView>
   );
 };
 
