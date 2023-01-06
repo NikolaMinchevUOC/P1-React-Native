@@ -15,6 +15,7 @@ import {
   TouchableOpacity,
   View,
 } from "react-native";
+import Loader from "../components/Loader";
 import Reto from "../components/Reto";
 import { db } from "../db/firebaseConfig";
 import styles from "../styles/StyleInicio";
@@ -26,21 +27,27 @@ const Evolucion = () => {
 
   const [goals, setGoals] = useState([]);
 
+  const [loading, setLoading] = useState(false);
+
   // Base de datos
   useEffect(() => {
-    try {
-      onSnapshot(collection(db, "retos"), (snapshot) => {
-        const docList = [];
+    setLoading(true);
+    setTimeout(() => {
+      try {
+        setLoading(false);
+        onSnapshot(collection(db, "retos"), (snapshot) => {
+          const docList = [];
 
-        snapshot.forEach((doc) => {
-          docList.push(doc.data());
+          snapshot.forEach((doc) => {
+            docList.push(doc.data());
+          });
+
+          setGoals(docList);
         });
-
-        setGoals(docList);
-      });
-    } catch (error) {
-      console.log(error);
-    }
+      } catch (error) {
+        console.log(error);
+      }
+    }, 800);
   }, []);
   //console.log(goals.length);
   useLayoutEffect(() => {
@@ -93,6 +100,7 @@ const Evolucion = () => {
 
   return (
     <View style={{ backgroundColor: "white", flexDirection: "column", flex: 1 }}>
+      <Loader visible={loading} />
       <Image
         source={require("../../assets/evolucion.jpg")}
         containerStyle={{ width: "100%" }}
