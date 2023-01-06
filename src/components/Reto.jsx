@@ -4,7 +4,7 @@ import { Icon, Image } from "@rneui/themed";
 import { Text, TouchableOpacity, TouchableWithoutFeedback, View } from "react-native";
 import { useTailwind } from "tailwind-rn";
 
-function Reto({ nombre, detalle, completado, categoria, tiempo, activo, periodicidad }) {
+function Reto({ id, nombre, detalle, completado, categoria, tiempo, activo, periodicidad }) {
   const tw = useTailwind();
   const navigation = useNavigation();
 
@@ -32,6 +32,7 @@ function Reto({ nombre, detalle, completado, categoria, tiempo, activo, periodic
       activeOpacity={0.9}
       onPress={() =>
         navigation.navigate("DetalleReto", {
+          id: id,
           nombre: nombre,
           detalle: detalle,
           completado: completado,
@@ -60,7 +61,7 @@ function Reto({ nombre, detalle, completado, categoria, tiempo, activo, periodic
           <Text style={{ fontSize: 14 }}>{detalle}</Text>
         </View>
         <View style={{ margin: 5, marginRight: 10, justifyContent: "center", alignItems: "center" }}>
-          <Text style={{  backgroundColor: "red", borderRadius: 7, }}>{completado}</Text>
+          <Text style={{ backgroundColor: "lightblue", borderRadius: 7, padding: 2 }}>{completado}</Text>
 
           <AntDesign name="right" size={18} color="black" style={{ textAlign: "right" }} />
         </View>

@@ -10,8 +10,8 @@ const Contactar = () => {
       headerShown: true,
       headerTitleAlign: "center",
       headerStyle: {
-				backgroundColor: 'lightblue',
-			},
+        backgroundColor: "white",
+      },
       headerLeft: () => (
         <View style={{ marginLeft: 20 }}>
           <Icon name="chevron-left" type="entypo" onPress={() => navigation.goBack()} />
@@ -33,7 +33,7 @@ const Contactar = () => {
   });
 
   return (
-    <View style={{ backgroundColor: "#008d92" }}>
+    <View style={{ backgroundColor: "white" }}>
       <Image
         source={require("../../assets/contactar.jpg")}
         containerStyle={{ width: "100%", height: 220 }}

@@ -8,6 +8,7 @@ import {
   FlatList,
   Image,
   Pressable,
+  SafeAreaView,
   ScrollView,
   StyleSheet,
   Text,
@@ -29,20 +30,26 @@ const Evolucion = () => {
   useEffect(() => {
     try {
       onSnapshot(collection(db, "retos"), (snapshot) => {
-        setGoals(snapshot.docs.map((doc) => doc.data()));
+        const docList = [];
+
+        snapshot.forEach((doc) => {
+          docList.push(doc.data());
+        });
+
+        setGoals(docList);
       });
     } catch (error) {
       console.log(error);
     }
-  }, [goals]);
-
+  }, []);
+  //console.log(goals.length);
   useLayoutEffect(() => {
     navigation.setOptions({
       headerShown: true,
       headerTitleAlign: "center",
       headerStyle: {
-				backgroundColor: 'lightblue',
-			},
+        backgroundColor: "white",
+      },
       headerLeft: () => (
         <View style={{ marginLeft: 20 }}>
           <Icon name="chevron-left" type="entypo" onPress={() => navigation.goBack()} />
@@ -69,9 +76,10 @@ const Evolucion = () => {
   const renderItem = ({ item }) => {
     // const backgroundColor = item.id === selectedId ? '#6e3b6e' : '#f9c2ff';
     // const color = item.id === selectedId ? 'white' : 'black';
+    //console.log(item.id);
     return (
       <Reto
-        key={item.id}
+        id={item.id}
         nombre={item.nombre}
         detalle={item.detalle}
         completado={item.completado}
@@ -91,11 +99,15 @@ const Evolucion = () => {
         PlaceholderContent={<ActivityIndicator />}
       />
 
+      <FlatList
+        style={{ backgroundColor: "white" }}
+        data={goals}
+        renderItem={renderItem}
+        keyExtractor={(item) => item.id}
+        extraData={selectedId}
+      />
 
-      <FlatList style= {{backgroundColor: "lightblue"}} data={goals} renderItem={renderItem} keyExtractor={(item) => item.id} extraData={selectedId} />
-      <View style={{backgroundColor: "lightblue", justifyContent: "flex-end" }}>
-  
-
+      <View style={{ backgroundColor: "white", justifyContent: "flex-end" }}>
         <Pressable style={styles.button} onPress={() => navigation.navigate("NuevoReto")}>
           <Text style={styles.text}>Nuevo Reto</Text>
         </Pressable>

@@ -6,12 +6,12 @@ import { getFirestore } from "firebase/firestore";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyBa4UyMqZSziBV8bHlWnNyvrBmlbhOa6Q0",
-  authDomain: "reactivados-755f2.firebaseapp.com",
-  projectId: "reactivados-755f2",
-  storageBucket: "reactivados-755f2.appspot.com",
-  messagingSenderId: "341175892720",
-  appId: "1:341175892720:web:bc0b65dbfa56317e1e6035",
+  apiKey: "AIzaSyC8vD6bstUhAdSAGc5g7PBgin4pDJ_IQ64",
+  authDomain: "p5-reactivados.firebaseapp.com",
+  projectId: "p5-reactivados",
+  storageBucket: "p5-reactivados.appspot.com",
+  messagingSenderId: "294041808384",
+  appId: "1:294041808384:web:4a41df58c29d4cced972e5",
 };
 
 // Initialize Firebase

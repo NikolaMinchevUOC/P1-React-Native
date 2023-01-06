@@ -12,8 +12,8 @@ const RetosActivos = () => {
       headerShown: true,
       headerTitleAlign: "center",
       headerStyle: {
-				backgroundColor: 'lightblue',
-			},
+        backgroundColor: "white",
+      },
       headerLeft: () => (
         <View style={{ marginLeft: 20 }}>
           <Icon name="chevron-left" type="entypo" onPress={() => navigation.goBack()} />
@@ -35,14 +35,12 @@ const RetosActivos = () => {
   });
 
   return (
-    <View style={{ backgroundColor: "lightblue", flexDirection: "column", flex: 1 }}>
+    <View style={{ backgroundColor: "white", flexDirection: "column", flex: 1 }}>
       <Image
         source={require("../../assets/activos.jpg")}
         containerStyle={{ width: "100%", height: 220 }}
         PlaceholderContent={<ActivityIndicator />}
       />
-
-      
     </View>
   );
 };
